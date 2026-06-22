@@ -193,7 +193,6 @@ export default function SubtaskList() {
         isOpen={isTimerModalOpen}
         onClose={() => setIsTimerModalOpen(false)}
         onStart={(hours, minutes, seconds) => {
-          // Pass initial time and taskId to timer screen
           router.push({
             pathname: '/timer',
             params: { hours, minutes, seconds, taskId }
@@ -241,7 +240,7 @@ const styles = StyleSheet.create({
     paddingTop: 40,
     paddingHorizontal: 24,
     alignItems: 'center',
-    paddingBottom: 0, // Padding bottom is handled by DraggableFlatList contentContainer
+    paddingBottom: 0,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: -2 },
     shadowOpacity: 0.1,
@@ -261,7 +260,7 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
   title: {
-    fontFamily: 'Poppins-SemiBold', // Fallback for serif bold
+    fontFamily: 'Poppins-SemiBold', 
     fontSize: 32,
     lineHeight: 42,
     color: '#151515',
@@ -317,7 +316,7 @@ const styles = StyleSheet.create({
     gap: 8,
     width: '100%',
     backgroundColor: '#418b7e',
-    paddingVertical: 16, // Adjusted to fix vertical centering
+    paddingVertical: 16, 
     borderRadius: 30,
     marginBottom: 20,
   },
@@ -325,6 +324,6 @@ const styles = StyleSheet.create({
     fontFamily: 'Poppins-SemiBold',
     fontSize: 16,
     color: '#fff',
-    lineHeight: 24, // Explicit line height to match icon height better
+    lineHeight: 24, 
   }
 });

@@ -19,8 +19,7 @@ export default function NotificationPage() {
   };
 
   const handleNext = () => {
-    // Final step — go to login
-    router.push('/login');
+    router.push('/home');
   };
 
   return (

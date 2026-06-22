@@ -13,7 +13,6 @@ import { useTheme } from '@/theme/ThemeContext';
 
 const { width, height } = Dimensions.get('window');
 
-// --- DUMMY DATA ---
 type DummyTask = {
   id: string;
   title: string;
@@ -22,7 +21,6 @@ type DummyTask = {
   variant: TaskVariant;
 };
 
-// Generate some dummy tasks spread across a few months
 const generateDummyTasks = (): DummyTask[] => {
   const tasks: DummyTask[] = [];
   const today = new Date();
@@ -58,7 +56,6 @@ export default function TaskPage() {
     return unsubscribe;
   }, []);
 
-  // State for Month Selector
   const [currentDate, setCurrentDate] = useState<Date>(new Date());
 
   const handlePrevMonth = () => {

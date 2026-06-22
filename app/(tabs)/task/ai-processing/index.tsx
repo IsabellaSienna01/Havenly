@@ -15,7 +15,6 @@ export default function AIProcessingPage() {
 
   useFocusEffect(
     useCallback(() => {
-      // Reset stage when screen focuses
       setStage(1);
       floatAnim.setValue(0);
 

@@ -18,19 +18,16 @@ export default function CrisisModePage() {
       stageAnim.setValue(0);
       pulseAnim.setValue(1);
 
-      // Breath In: 4s (scale up)
       const inhale = Animated.parallel([
         Animated.timing(stageAnim, { toValue: 0, duration: 4000, useNativeDriver: true }),
         Animated.timing(pulseAnim, { toValue: 1.5, duration: 4000, easing: Easing.inOut(Easing.ease), useNativeDriver: true })
       ]);
 
-      // Hold: 7s (maintain scale, fade to yellow)
       const hold = Animated.parallel([
         Animated.timing(stageAnim, { toValue: 1, duration: 500, useNativeDriver: true }),
         Animated.timing(pulseAnim, { toValue: 1.5, duration: 7000, useNativeDriver: true })
       ]);
 
-      // Breath Out: 8s (scale down, fade to blue)
       const exhale = Animated.parallel([
         Animated.timing(stageAnim, { toValue: 2, duration: 500, useNativeDriver: true }),
         Animated.timing(pulseAnim, { toValue: 1, duration: 8000, easing: Easing.inOut(Easing.ease), useNativeDriver: true })
@@ -44,8 +41,8 @@ export default function CrisisModePage() {
         router.replace('/crisis-mode/options' as any);
       });
 
-      const timer1 = setTimeout(() => setStage(2), 4000); // Start Hold
-      const timer2 = setTimeout(() => setStage(3), 11000); // Start Breath Out (4s + 7s)
+      const timer1 = setTimeout(() => setStage(2), 4000);
+      const timer2 = setTimeout(() => setStage(3), 11000);
 
       return () => {
         clearTimeout(timer1);
